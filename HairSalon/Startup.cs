@@ -31,12 +31,12 @@ namespace HairSalon
 
     public void Configure(IApplicationBuilder app)
     {
-      app.UseDelveloperExceptionPage();
+      app.UseDeveloperExceptionPage();
       app.UseRouting();
 
       app.UseEndpoints(routes =>
       {
-        routes.MapControllersRoute("default", "{controller=Home}/{action=Index}/{id?}");
+        routes.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
       });
 
       app.UseStaticFiles();
