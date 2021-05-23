@@ -1,44 +1,80 @@
-Pierre's
-Using what Ive learned in for the 2 weeks of C# web application, create a program that will find allow the user to create a mini database of information for a list of Vendors and the Orders for that vendor.
-By Juan Hasbun
+# Eau Claire's Salon
 
-Technologies Used
+#### Apply what was learned about MySQL, Databases, and using EntityFramework to construct a web app with an editable database.
 
-    HTML
-    Github/bash
-    Virtual Studio Code
-    CSS
-    Bootstrap
-    Javascript
-    Jquery
-    Markdown
-    Node.js
-    Web Pack
-    APIs
-    C#
-    MSTest
+#### By Juan Hasbun
 
-Description
+## Technologies Used
 
-For this program, it will take the user to a splash page where you will find links to either view all your vendors or to add a vendor to your list. If the user chooses to add a new vendor, the site will redirect to a new page with forms to enter in data and then submit the new vendor. The user can then continue to add more vendors or go back to either the splash page or the main list of all saved vendors. If the user selects one of the Vendors, they can see all available data concerning that vendor as well as be able to go to a new page to add new Order information for that vendor similarly to the previous Vendor forms.
-Setup/Installation Requirements
+   * HTML
+   * Github/bash
+   * Virtual Studio Code
+   * CSS
+   * Bootstrap
+   * Javascript
+   * Jquery
+   * Markdown
+   * Node.js
+   * Web Pack
+   * APIs
+   * C#
+   * MSTest
+   * MySQl
+   * MySQL Workbench
+   * AspNetCore5.0
+   * Entity Framework Core
 
-    Clone from repository (use: $git clone https:github.com/JuanHasbunZem/Bakery)
-    Once cloned on to your computer, access with GitBash / terminal
-    Before anything, on your terminal (while within the Pierre folder) run: $ dotnet restore
-    To compile the program, first on your terminal run: $ dotnet build
-    To execute the program, on your terminal type: $ dotnet run
-    If you wish to run your own tests of the program, make sure your terminal is located within the Bakery.Tests directory and then type: $ dotnet test
+## Description
 
-Known Bugs
+For this program, the user will be prompted to navigate towards a page for clients or a page for stylists. Either page will display all currently saved data from an exported database. If there is no data at all, the page will display a message and inform the user they should add some.  Each page (stylist and client) will also have links to allow the user to fill out a form to add either to the database.  A list of each is provided with links to view all the information for that specific stylist or client.
 
-    No currently known issues.
 
-Future Updates
+## Setup/Installation Requirements
 
-    Add CSS stylings to clean up website.
+   * Clone from repository (use: `$git clone https:github.com/JuanHasbunZem/HairSalon`)
+   * Once cloned on to your computer, access with GitBash / terminal
+   * Before anything, you will need to export the database. To do so, you will need to run the following commands in your MySQL command line:
+  ```
+  CREATE TABLE `juan_hasbun`.`clients` (
+  `ClientId` INT NOT NULL AUTO_INCREMENT,
+  `Name` VARCHAR(255) NULL,
+  `ContactInfo` VARCHAR(255) NULL,
+  `StylistId` INT NULL,
+  PRIMARY KEY (`ClientId`));``
 
-License
+  ``CREATE TABLE `juan_hasbun`.`stylists` (
+  `StylistId` INT NOT NULL AUTO_INCREMENT,
+  `Name` VARCHAR(255) NULL,
+  `Style` VARCHAR(255) NULL,
+  `Availability` VARCHAR(255) NULL,
+  PRIMARY KEY (`StylistId`));``
+  ```
+
+  * Additionally, you will need to create an appsettings.json file and include the following within it:
+  ```
+  {
+    "ConnectionStrings": 
+    {
+      "DefaultConnection": "Server=localhost;Port=3306;database=[firstname_lastname];uid=root;pwd=epicodus;"
+    }
+  }
+```  
+Note: `[firstname_lastname]` should be replaced by the name of your database.
+
+   * On your terminal (while within the Pierre folder) run: `$ dotnet restore`
+   * To compile the program, first on your terminal run: `$ dotnet build`
+   * To execute the program, on your terminal type: `$ dotnet run`
+  
+
+## Known Bugs
+
+# Currently no known issues.
+
+## Future Updates
+
+* Add CSS stylings to clean up website.
+
+## License
 
 Copyright 2021 Juan Hasbun
 
@@ -49,17 +85,4 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 Contact Information
 
-Email at: zemenareq@hotmail.com
-
-``CREATE TABLE `juan_hasbun`.`clients` (
-  `ClientId` INT NOT NULL AUTO_INCREMENT,
-  `Name` VARCHAR(255) NULL,
-  `ContactInfo` VARCHAR(255) NULL,
-  PRIMARY KEY (`ClientId`));``
-
-  ``CREATE TABLE `juan_hasbun`.`stylists` (
-  `StylistId` INT NOT NULL AUTO_INCREMENT,
-  `Name` VARCHAR(255) NULL,
-  `Style` VARCHAR(255) NULL,
-  `Availability` DATETIME NULL,
-  PRIMARY KEY (`StylistId`));``
+Email at: [zemenareq@hotmail.com](zemenareq@hotmail.com) 
