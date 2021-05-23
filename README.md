@@ -1,3 +1,4 @@
+
 # Eau Claire's Salon
 
 #### Apply what was learned about MySQL, Databases, and using EntityFramework to construct a web app with an editable database.
@@ -66,9 +67,12 @@ Note: `[firstname_lastname]` should be replaced by the name of your database.
    * To execute the program, on your terminal type: `$ dotnet run`
   
 
+## Database Schema
+![Screenshot (123)](https://user-images.githubusercontent.com/76922718/119252777-d6363d00-bb62-11eb-8092-6743ddc072db.png)
+
 ## Known Bugs
 
-# Currently no known issues.
+* Currently no known issues.
 
 ## Future Updates
 
